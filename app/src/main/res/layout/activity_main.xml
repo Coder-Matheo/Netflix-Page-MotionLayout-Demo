@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.motion.widget.MotionLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/play_imageView"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layoutDescription="@xml/activity_main_scene2"
+    tools:context=".MainActivity">
+
+
+    <ImageView
+        android:id="@+id/backViewPager"
+        android:layout_width="0dp"
+        android:layout_height="140dp"
+        android:layout_marginTop="4dp"
+        android:src="@drawable/wallpaper_netflix"
+        android:scaleType="centerCrop"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="SpeakableTextPresentCheck" />
+
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerview"
+        android:layout_width="410dp"
+        android:layout_height="514dp"
+        android:layout_marginTop="24dp"
+
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        app:layout_constraintBottom_toTopOf="@+id/bottomNavigationView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/backViewPager">
+
+    </androidx.recyclerview.widget.RecyclerView>
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottomNavigationView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:menu="@menu/main_menu" >
+
+    </com.google.android.material.bottomnavigation.BottomNavigationView>
+
+
+    <ImageButton
+        android:id="@+id/play_btn_imageView"
+        android:layout_width="50dp"
+        android:layout_height="49dp"
+        android:alpha="0"
+        app:layout_constraintBottom_toBottomOf="@+id/backViewPager"
+        app:layout_constraintEnd_toEndOf="@+id/backViewPager"
+        app:layout_constraintStart_toStartOf="@+id/backViewPager"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_play" />
+
+</androidx.constraintlayout.motion.widget.MotionLayout>

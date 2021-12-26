@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<MotionScene 
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:motion="http://schemas.android.com/apk/res-auto">
+
+    <Transition
+        motion:constraintSetEnd="@+id/end"
+        motion:constraintSetStart="@id/start"
+        motion:duration="1000">
+       <KeyFrameSet>
+           <KeyAttribute
+               motion:motionTarget="@+id/backViewPager"
+               motion:framePosition="100"
+               android:scaleX="1" />
+           <KeyAttribute
+               motion:motionTarget="@+id/backViewPager"
+               motion:framePosition="100"
+               android:scaleY="1" />
+           <KeyAttribute
+               motion:motionTarget="@+id/imageView4"
+               motion:framePosition="100"
+               android:alpha="1" />
+           <KeyAttribute
+               motion:motionTarget="@+id/play_btn_imageView"
+               motion:framePosition="100"
+               android:alpha="1" />
+           <KeyAttribute
+               motion:motionTarget="@+id/bottomNavigationView"
+               motion:framePosition="100"
+               android:alpha="0" />
+
+
+
+       </KeyFrameSet>
+        <OnSwipe
+            motion:touchAnchorId="@+id/backViewPager"
+            motion:dragDirection="dragDown"
+            motion:touchAnchorSide="bottom" />
+
+
+
+    </Transition>
+
+    <ConstraintSet android:id="@+id/start">
+        <Constraint
+            motion:layout_constraintEnd_toEndOf="parent"
+            android:layout_width="408dp"
+            android:layout_height="495dp"
+            motion:layout_constraintBottom_toTopOf="@+id/bottomNavigationView"
+            motion:layout_constraintTop_toBottomOf="@+id/backViewPager"
+            motion:layout_constraintStart_toStartOf="parent"
+            android:layout_marginTop="32dp"
+            android:id="@+id/recyclerview"
+            motion:layout_editor_absoluteY="188dp" />
+        <Constraint
+            android:layout_width="match_parent"
+            android:layout_height="140dp"
+            android:id="@+id/backViewPager"
+            motion:layout_constraintEnd_toEndOf="parent" />
+    </ConstraintSet>
+
+    <ConstraintSet android:id="@+id/end">
+        <Constraint
+            android:layout_height="372dp"
+            android:layout_width="413dp"
+            android:id="@+id/backViewPager"
+            motion:layout_constraintTop_toTopOf="parent" />
+        <Constraint
+            android:layout_height="316dp"
+            motion:layout_constraintStart_toStartOf="parent"
+            motion:layout_constraintHorizontal_bias="0.0"
+            motion:layout_constraintEnd_toEndOf="parent"
+            android:layout_width="401dp"
+            android:id="@+id/recyclerview"
+            motion:layout_constraintBottom_toBottomOf="parent"
+            motion:layout_constraintTop_toBottomOf="@+id/backViewPager"
+            motion:layout_constraintVertical_bias="0.627"
+            android:layout_marginTop="16dp" />
+        <Constraint
+            android:id="@+id/imageView4"
+            android:layout_height="49dp"
+            motion:layout_constraintEnd_toEndOf="@+id/backViewPager"
+            android:layout_width="50dp"
+            motion:layout_constraintStart_toStartOf="@+id/backViewPager"
+            motion:layout_constraintVertical_bias="0.47"
+            motion:layout_constraintTop_toTopOf="parent"
+            motion:layout_constraintBottom_toBottomOf="@+id/backViewPager"
+            motion:layout_constraintHorizontal_bias="0.531" />
+    </ConstraintSet>
+</MotionScene>
